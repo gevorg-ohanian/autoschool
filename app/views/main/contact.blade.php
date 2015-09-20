@@ -1,122 +1,12 @@
-﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
-    <title>Drive</title>
-    <!--[if IE]>
-    <script type="text/javascript">
-        var console = { log: function() {} };
-    </script>
-    <![endif]-->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <!--	    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>-->
-    <script type="text/javascript" src="/js/jquery.fullPage.js"></script>
-    <!--        <script type="text/javascript" src="jquery.onepage-scroll.js"></script>-->
-    <!--	    <script type="text/javascript" src="js/examples.js"></script>-->
-    <link rel="stylesheet" type="text/css" href="/css/style.css" />
-    <link rel="stylesheet" type="text/css" href="/css/jquery.fullPage.css" />
+﻿@extends('template.template')
+@section('content')
 
-
-    <style>
-        body {
-            overflow:hidden;
-        }
-        #hellopreloader_preload{
-            display: block;
-            position: fixed;
-            z-index: 9999;
-            width: 100%;
-            height: 100%;
-            background: #000;
-        }
-        .container {
-            position: fixed;
-            z-index: 99999;
-            width: 150px;
-            height:150px;
-            top: 0;
-            left: 0;
-            right:0;
-            bottom:0;
-            margin:auto;
-        }
-        .circle {
-            background-color: rgba(0,0,0,0);
-            border: 5px solid rgba(139, 195, 74, .9);
-            border-radius: 50%;
-            box-shadow: 0 0 15px rgba(139, 195, 74, .9);
-            border-top: 5px solid rgba(0,0,0,0);
-            border-left: 5px solid rgba(0,0,0,0);
-            margin: 0 auto;
-        }
-        .ball {
-            opacity: .6;
-            width: 110px;
-            height:110px;
-            animation: spin .5s infinite linear;
-        }
-        .ball1 {
-            opacity: .9;
-            width: 80px;
-            height: 80px;
-            position: relative;
-            top: -105px;
-            animation: spinoff .5s infinite linear;
-        }
-        .container p {
-            font-size: 16px;
-            position: absolute;
-            color: #FFF;
-            bottom: -40px;
-            left: 18px;
-            font-weight: bold;
-            text-transform: uppercase;
-            opacity:.7;
-        }
-        .stop:hover {
-            animation-play-state:paused;
-        }
-        @keyframes spin {
-            0% {transform:rotate(0deg); }
-            100% {transform:rotate(360deg); }
-        }
-        @keyframes spinoff {
-            0% { transform:rotate(0deg); }
-            100% {transform:rotate(-360deg); }
-        }
-    </style>
-    <script>
-        $(document).ready(function () {
-            $('#fullpage').fullpage({
-                'verticalCentered': true,
-                'css3': false,
-                //'sectionsColor': ['#fff'],
-                //'navigationPosition': 'right',
-                'navigationTooltips': ['Մե՞նք', 'Առաջարկ', 'Երաշխիք', 'Միայն մենք', 'Կարծիքներ', 'Գրանցվել'],
-                'easing': 'linear',
-                'easingcss3': 'ease',
-                //'anchors': ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
-                'autoScrolling': true,
-                'navigation': false,
-                'fitToSection': true,
-                //'resize': false,
-                //'animateAnchor': false,
-                //'scrollOverflow': true,
-                'responsive': 768,
-                //'menu': '#menu',
-                //'continuousVertical': true,
-                //'paddingTop': '20px',
-            });
-        });
-    </script>
-
-</head>
 <body class="contact_page">
 <div id="hellopreloader">
     <div id="hellopreloader_preload">
         <div class="container">
-            <div class="circle ball stop"></div>
-            <div class="circle ball1 stop"></div>
+            <div class="circle-contact ball stop"></div>
+            <div class="circle-contact ball1 stop"></div>
             <p>Բեռնվում է...</p>
         </div>
     </div>
@@ -138,8 +28,8 @@
 <!--header end-->
 <header>
     <section>
-        <a class="logo" href="index.html">
-            <img src="images/logo4.png" alt="logo">
+        <a class="logo" href="/">
+            <img src="/images/logo4.png" alt="logo">
         </a>
         <nav class="contact_nav">
             <input type="checkbox" id="menu" class=" ">
@@ -147,9 +37,9 @@
             <ul class="menu_nav">
                 <li class="nav_style call"><span>Զանգահարեք</span>+374 99 99 99</li>
                 <li class="nav_style stock "><a href="#">Ակցիա</a></li>
-                <li class="nav_style "><a href="index.html">Գլխավոր</a></li>
-                <li class="nav_style "><a href="offer.html">առաջարկներ</a></li>
-                <li class="nav_style "><a href="contact.html">Կոնտակտներ</a></li>
+                <li class="nav_style "><a href="/">Գլխավոր</a></li>
+                <li class="nav_style "><a href="/offer">առաջարկներ</a></li>
+                <li class="nav_style "><a href="/contact">Կոնտակտներ</a></li>
                 <li class="menu_section ">
                     <label for="menu" class="close"></label>
                     <!--<a href="#" class="button">nav-triggerՀայտ</a>-->
@@ -160,14 +50,14 @@
         <div class="clear"></div>
     </section>
 </header>
-<main id="fullpage" class="contact_main">
+<main id="fullpage2" class="contact_main">
     <section id="" class="contact section section_show">
         <section class="Landing_page_section">
             <section class="section_body wrap">
                 <h2>Կոնտակտներ</h2>
                 <section class="article_body">
                     <article>
-                        <img src="images/Sprite_75.png" class="contact_icon" alt="" />
+                        <img src="/images/Sprite_75.png" class="contact_icon" alt="" />
                         <h3>+347 99 999 999</h3>
                         <p class="mailito">info@drive.com</p>
                         <h4>ՀՀ Երևան Ճլթոյան 45</h4>
@@ -212,7 +102,7 @@
 
             </div>
             <div class="clear"></div>
-            <img class="logo" src="images/logo_green.png" alt=""/>
+            <img class="logo" src="/images/logo_green.png" alt=""/>
         </div>
         <div class="back_call_block" onclick="show('block')">
             <a class="back_call green green_btn"></a>
@@ -226,3 +116,4 @@
 </footer>
 </body>
 </html>
+    @stop
